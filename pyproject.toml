@@ -1,0 +1,14 @@
+[project]
+name = "checksum-kit-kit"
+version = "0.1.0"
+description = "Streamable CRC-32 and Adler-32 checksums computed in fixed-size chunks"
+requires-python = ">=3.10"
+dependencies = []
+readme = "README.md"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
