@@ -36,3 +36,10 @@ stream is `1`. These match `zlib.crc32(b"")` and `zlib.adler32(b"")`
 respectively. If you store digests and compare against values produced
 by tools that emit an empty-file checksum of `"00000000"`, note that
 Adler-32's canonical empty value is `0x00000001`, not zero.
+
+## Design notes
+
+The window stores values eagerly rather than keeping running aggregates. Running
+sums drift with floating point over long streams, and recomputing from a small
+buffer is cheap enough that the drift is not worth the speed.
+
